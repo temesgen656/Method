@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package methodlab;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author kidus
+ */
+public class Methodlab {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    
+        Scanner input = new Scanner(System.in);
+      
+    
+//question one retun 
+        System.out.println(inspireMe("Everything you need to"
+                + " accomplish your GOAL is ALREADY IN YOU."));
+        
+        //question 2 retun
+        int num1, num2;
+        System.out.println("please entert the frist number");
+        num1 = input.nextInt();
+        System.out.println("please entert the second number");
+        num2 = input.nextInt();
+        System.out.println("the avarage number is: " + avg2Ints(num1,num2));
+        
+        
+        //question 3 return 
+        String text1;
+        System.out.println("enter your text.");
+        text1 = input.nextLine();
+        System.out.println("your lowe case wordes are: " + countLowers(text1));
+        
+        
+        
+        
+    }
+    //Question 1
+        public static String inspireMe(String inspirWord) {
+          
+            
+          
+          return inspirWord; 
+        }
+
+         // Question 2
+        public static double avg2Ints(int num1, int num2) {
+
+            double total = num1+ num2;
+            return total / 2;
+    }
+
+    //Question 3
+        public static int countLowers(String text) {
+
+            int tolowerCases = 0;
+            if (text == null) return tolowerCases;
+
+            for (int i = 0; i < text.length(); i++) {
+                if (Character.isLowerCase(text.charAt(i)))
+                tolowerCases += 1;
+        }
+        return tolowerCases;
+    }
+
+    //Question 4
+    public boolean validString(String text1) {
+
+        if (text1 == null) return false;
+        int length = text1.length();
+        boolean containsPassword = text1.toLowerCase().contains("password");
+        int numbers = 0;
+        for (int i = 0; i < text1.length(); i++) {
+            if (Character.isDigit(text1.charAt(i)))
+                numbers += 1;
+        }
+        boolean doesNotEndWithDigt = !Character.isDigit(text1.charAt(length - 1));
+
+        return (length >= 8) && (!containsPassword) &&
+                (numbers >= 2) && doesNotEndWithDigt;
+    }
+}
+        // TODO code application logic here
+        
+
+          
+
